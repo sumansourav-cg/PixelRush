@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Sudhar - Sign in to your ward</title>
+  <title>Smart Sudhar - Public Issue Board</title>
   <style>
 /* ==========================================================================
    SMART SUDHAR - Civic & Campus Infrastructure Maintenance System
@@ -2719,207 +2719,545 @@ img {
 </style>
 </head>
 
-<body style="background: radial-gradient(circle at top right, #eff6ff 0%, #f8fafc 60%);">
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-wrapper">
+        <img src="assets/logo.png" alt="Smart Sudhar Logo" class="brand-logo-img"
+          onerror="this.outerHTML='<div class=\'brand-logo-fallback\'>SS</div>'">
+        <span>Smart Sudhar</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li class="nav-item active"><a href="index.html">Issue Board</a></li>
+          <li class="nav-item"><a href="report.html">Report Issue</a></li>
+          <li class="nav-item"><a href="details.html">Issue Details</a></li>
+          <li class="nav-item"><a href="triage.html">Manager Triage</a></li>
+          <li class="nav-item"><a href="verification.html">Verification & Sign-off</a></li>
+          <li class="nav-item"><a href="analytics.html">Analytics</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" title="Notifications" aria-label="Notifications">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span class="badge-dot"></span>
+        </button>
+        <a href="login.html" class="user-avatar-btn" title="User Account">
+          <img src="assets/avatar_profile.png" alt="Profile" class="user-avatar-img"
+            onerror="this.outerHTML='<div class=\'assignee-avatar avatar-blue\'>AS</div>'">
+        </a>
+      </div>
+    </div>
+  </header>
 
   <!-- Main Container -->
-  <main class="login-container">
+  <main class="main-content">
 
-    <!-- Left Column: Branding & Features -->
-    <div class="login-left-brand">
+    <!-- Page Header -->
+    <div class="page-header">
       <div>
-        <div class="page-eyebrow" style="margin-bottom: 1rem;">
+        <div class="page-eyebrow">
           <span class="dot"></span>
-          CIVIC GOVERNANCE V2.4 ACTIVE
+          LIVE FACILITY TELEMETRY • SMART SUDHAR
         </div>
+        <h1 class="page-title">Public Issue Board</h1>
+        <p class="page-subtitle">Real-time visibility across campus and community facilities. Track status, eliminate
+          duplicate reports, and ensure fast repairs.</p>
+      </div>
 
-        <a href="index.html" class="brand-wrapper" style="margin-bottom: 1.5rem; font-size: 1.6rem;">
-          <img src="assets/logo.png" alt="Smart Sudhar Logo" style="width: 40px; height: 40px; border-radius: 10px;"
-            onerror="this.outerHTML='<div class=\'brand-logo-fallback\' style=\'width:40px;height:40px;font-size:1.2rem;\'>SS</div>'">
-          <span>Smart Sudhar</span>
+      <div class="page-actions">
+        <a href="index.html" class="btn btn-outline">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+          </svg>
+          Sync Board
         </a>
-
-        <h1
-          style="font-size: 2.5rem; font-weight: 800; color: #0066f5; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.85rem;">
-          Fixing our community, together.
-        </h1>
-
-        <p style="font-size: 1.05rem; color: #334155; line-height: 1.55; max-width: 520px;">
-          Clean, accountable civic infrastructure for apartments, gated societies, academic campuses, and municipal
-          wards.
-        </p>
+        <a href="report.html" class="btn btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Report New Issue
+        </a>
       </div>
+    </div>
 
-      <!-- 2x2 Feature Highlights Grid -->
-      <div class="features-2x2">
-        <div class="feature-box">
-          <div class="feature-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-              <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5M12 12h.01"></path>
-              <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5M19.1 4.9C23 8.8 23 15.2 19.1 19.1"></path>
+    <!-- Top KPI Stat Cards (4 columns) -->
+    <div class="stats-grid-4">
+      <!-- Card 1 -->
+      <div class="stat-card">
+        <div class="stat-card-header">
+          <span class="stat-card-title">OPEN ISSUES</span>
+          <div class="stat-icon-wrapper stat-icon-blue">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
             </svg>
           </div>
-          <div class="feature-title">Live Issue Tracking</div>
-          <div class="feature-desc">Real-time GPS status pings</div>
         </div>
-
-        <div class="feature-box">
-          <div class="feature-icon" style="background: #e0f2fe; color: #0284c7;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
-            </svg>
-          </div>
-          <div class="feature-title">Zero Duplicates</div>
-          <div class="feature-desc">Auto-merged cluster reports</div>
+        <div class="stat-value-row">
+          <span class="stat-value">14</span>
+          <span class="stat-value-sub">unresolved</span>
         </div>
-
-        <div class="feature-box">
-          <div class="feature-icon" style="background: #ecfdf5; color: #059669;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-              <circle cx="12" cy="13" r="4"></circle>
-            </svg>
-          </div>
-          <div class="feature-title">Photo-verified</div>
-          <div class="feature-desc">Before & after timestamp checks</div>
-        </div>
-
-        <div class="feature-box">
-          <div class="feature-icon" style="background: #f5f3ff; color: #7c3aed;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-              <path d="M3 21h18M3 10h18M5 10v11M9 10v11M15 10v11M19 10v11M12 2l10 8H2l10-8z"></path>
-            </svg>
-          </div>
-          <div class="feature-title">Direct Ward Link</div>
-          <div class="feature-desc">Municipal SLA enforcement</div>
+        <p class="stat-desc">Broken light, leaking tap, blocked...</p>
+        <div>
+          <span class="stat-status-pill stat-pill-blue">
+            <span class="badge-dot"></span>
+            Queue stable • Avg response 18m
+          </span>
         </div>
       </div>
 
-      <!-- Social Proof Strip -->
-      <div style="display: flex; align-items: center; gap: 0.85rem; margin-top: 1rem;">
-        <div style="display: flex; align-items: center;">
-          <span class="assignee-avatar avatar-blue" style="border: 2px solid white; z-index: 3;">98k</span>
-          <span class="assignee-avatar avatar-teal"
-            style="border: 2px solid white; margin-left: -8px; z-index: 2;">✔</span>
-          <span class="assignee-avatar avatar-indigo"
-            style="border: 2px solid white; margin-left: -8px; z-index: 1;">🏛</span>
+      <!-- Card 2 -->
+      <div class="stat-card">
+        <div class="stat-card-header">
+          <span class="stat-card-title">IN PROGRESS</span>
+          <div class="stat-icon-wrapper stat-icon-blue">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
         </div>
-        <div style="font-size: 0.85rem; color: #334155;">
-          Empowering <strong>1,400+ communities</strong> with rapid municipal resolution.
+        <div class="stat-value-row">
+          <span class="stat-value">6</span>
+          <span class="stat-value-sub">units</span>
+        </div>
+        <p class="stat-desc">Active repair crews deployed on-site</p>
+        <div>
+          <span class="stat-status-pill stat-pill-blue">
+            <span class="badge-dot"></span>
+            3 nearing scheduled sign-off
+          </span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="stat-card">
+        <div class="stat-card-header">
+          <span class="stat-card-title">OVERDUE / ESCALATED</span>
+          <div class="stat-icon-wrapper stat-icon-red">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </div>
+        </div>
+        <div class="stat-value-row">
+          <span class="stat-value" style="color: #dc2626;">2</span>
+          <span class="stat-value-sub" style="color: #dc2626; font-weight: 600;">urgent</span>
+        </div>
+        <p class="stat-desc">Flagged for facility head escalation</p>
+        <div>
+          <span class="stat-status-pill stat-pill-red">
+            <span class="badge-dot"></span>
+            Breached 12-hour SLA mark
+          </span>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="stat-card">
+        <div class="stat-card-header">
+          <span class="stat-card-title">RESOLVED THIS MONTH</span>
+          <div class="stat-icon-wrapper stat-icon-green">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+        </div>
+        <div class="stat-value-row">
+          <span class="stat-value" style="color: #059669;">84</span>
+          <span class="stat-value-sub" style="color: #059669; font-weight: 600;">fixes</span>
+        </div>
+        <p class="stat-desc">Audited & verified by resident reporters</p>
+        <div>
+          <span class="stat-status-pill stat-pill-green">
+            <span class="badge-dot"></span>
+            98.2% Resident Approval Rating
+          </span>
         </div>
       </div>
     </div>
 
-    <!-- Right Column: Login Card -->
-    <div>
-      <div class="login-card">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-          <span
-            style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">CIVIC
-            PORTAL</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            style="color: #0066f5;">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+    <!-- Search & Filter Panel -->
+    <div class="filter-panel">
+      <div class="search-zone-row">
+        <div class="search-input-wrapper">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
+          <input type="text" class="search-input"
+            placeholder="Search by building, floor, room number, or symptom (e.g. 'Hostel B', 'Washroom')">
         </div>
 
-        <h2 style="font-size: 1.6rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">
-          Sign in to your ward
-        </h2>
-
-        <!-- Role Tabs -->
-        <div class="portal-tabs">
-          <button type="button" class="portal-tab-btn active">Citizen</button>
-          <button type="button" class="portal-tab-btn">Facility Mgr</button>
-          <button type="button" class="portal-tab-btn">Field Crew</button>
-        </div>
-
-        <!-- Phone Input Form -->
-        <form action="index.html" method="get">
-          <div class="form-group">
-            <label class="form-label" for="phone">Mobile Phone Number</label>
-            <div class="phone-input-wrap">
-              <div class="phone-prefix">
-                <span>🇮🇳 +91</span>
-                <span style="font-size: 0.65rem; color: #64748b;">▾</span>
-              </div>
-              <input type="tel" id="phone" class="phone-field" placeholder="Enter 10-digit mobile number"
-                value="98765 43210" required>
-            </div>
-            <div
-              style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.78rem; color: #059669; font-weight: 500; margin-top: 0.45rem;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              We'll dispatch a 6-digit passcode via SMS / WhatsApp.
-            </div>
+        <div class="zone-filter-group">
+          <span class="filter-label">Zone:</span>
+          <div class="pill-radio-group">
+            <a href="#zone-all" class="pill-btn active">All Zones</a>
+            <a href="#zone-hostels" class="pill-btn">Hostels</a>
+            <a href="#zone-academic" class="pill-btn">Academic Wings</a>
+            <a href="#zone-library" class="pill-btn">Library</a>
+            <a href="#zone-cafeteria" class="pill-btn">Cafeteria / Tech Park</a>
           </div>
+        </div>
+      </div>
 
-          <a href="index.html" class="btn btn-primary btn-block btn-lg" style="margin-top: 1.25rem;">
-            Get OTP / Continue →
+      <div class="sub-filter-row">
+        <div class="status-pill-list">
+          <a href="#all" class="sub-pill active">All (22)</a>
+          <a href="#critical" class="sub-pill">
+            <span class="badge-dot" style="background-color: #dc2626;"></span>
+            Critical (2)
           </a>
-        </form>
-
-        <div class="divider-row">
-          <span>OR CONTINUE WITH</span>
+          <a href="#overdue" class="sub-pill">Overdue (2)</a>
+          <a href="#progress" class="sub-pill">In Progress (6)</a>
+          <a href="#resolved" class="sub-pill">Resolved (84)</a>
         </div>
 
-        <div class="social-auth-grid">
-          <a href="index.html" class="btn btn-outline btn-sm"
-            style="border-radius: 10px; font-weight: 600;">
-            <svg width="15" height="15" viewBox="0 0 24 24">
-              <path fill="#4285F4"
-                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-              <path fill="#34A853"
-                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-              <path fill="#FBBC05"
-                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
-              <path fill="#EA4335"
-                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
-            </svg>
-            Google
-          </a>
-
-          <a href="index.html" class="btn btn-outline btn-sm"
-            style="border-radius: 10px; font-weight: 600;">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.85c.65-.82 1.1-1.96.98-3.11-1 .04-2.14.67-2.81 1.46-.58.68-1.1 1.83-.96 2.95 1.12.09 2.18-.57 2.79-1.3z" />
-            </svg>
-            Apple
-          </a>
-        </div>
-
-        <a href="triage.html" class="btn btn-outline btn-block btn-sm"
-          style="border-radius: 10px; font-size: 0.8rem; margin-bottom: 1.25rem;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-            <line x1="8" y1="21" x2="16" y2="21"></line>
-            <line x1="12" y1="17" x2="12" y2="21"></line>
-          </svg>
-          Access Municipal Staff SSO / Contractor ID
-        </a>
-
-        <!-- Trust Badges -->
-        <div
-          style="border-top: 1px solid #f1f5f9; padding-top: 1rem; text-align: center; font-size: 0.75rem; color: #64748b; display: flex; flex-direction: column; gap: 0.35rem;">
-          <div>
-            <span style="color: #059669; font-weight: 600;">✔ Official Municipal Partner</span>
-            <span>•</span>
-            <span style="color: #0066f5; font-weight: 600;">⚡ Zero Spam</span>
-            <span>•</span>
-            <span>10-Sec Login</span>
-          </div>
-          <div
-            style="display: flex; align-items: center; justify-content: center; gap: 0.35rem; color: #334155; font-weight: 500;">
+        <div class="category-pill-list">
+          <a href="#cat-all" class="sub-pill active">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              style="color: #0066f5;">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
             </svg>
-            256-bit Secure Encryption
+            All Categories
+          </a>
+          <a href="#cat-elec" class="sub-pill">⚡ Electrical</a>
+          <a href="#cat-plumb" class="sub-pill">💧 Plumbing</a>
+          <a href="#cat-furn" class="sub-pill">🪑 Furniture</a>
+          <a href="#cat-sanit" class="sub-pill">♻ Sanitation</a>
+          <a href="#cat-hvac" class="sub-pill">❄ HVAC</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Issue Stream Header -->
+    <div class="stream-header">
+      <div class="stream-title-group">
+        <h2 class="stream-title">Active Issue Stream</h2>
+        <span class="stream-badge">Displaying 4 Primary Incidents</span>
+      </div>
+      <div class="stream-meta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          <path d="m9 12 2 2 4-4"></path>
+        </svg>
+        Anti-duplicate deduplication active
+      </div>
+    </div>
+
+    <!-- Active Issue Stream Cards List -->
+    <div class="issue-list">
+
+      <!-- Issue Card 1 -->
+      <article class="issue-card">
+        <div class="issue-icon-squircle squircle-blue">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+        </div>
+
+        <div class="issue-main-content">
+          <div class="issue-badge-row">
+            <span class="badge badge-blue">Electrical & Lighting</span>
+            <span class="badge badge-neutral">• TKT-8842</span>
+            <span class="badge badge-blue">
+              <span class="badge-dot"></span> In Progress
+            </span>
+          </div>
+
+          <h3 class="issue-title">Main Corridor Fluorescent Light Flickering & Dead</h3>
+
+          <div class="issue-meta-row">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Hostel Block B, 2nd Floor, Hallway near Room 204
+            </span>
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              Open for: <strong>4h 20m</strong>
+            </span>
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              SLA remaining: <strong>2h</strong>
+            </span>
+          </div>
+
+          <div class="issue-assignee-row">
+            <span>Assigned to:</span>
+            <span class="badge badge-neutral" style="padding: 0.15rem 0.5rem;">
+              <img src="assets/technician_rajesh.png" alt="Rajesh Kumar" class="assignee-avatar"
+                onerror="this.outerHTML='<span class=\'assignee-avatar avatar-blue\'>RK</span>'">
+              Rajesh Kumar (Duty Electrician)
+            </span>
           </div>
         </div>
 
+        <div class="issue-actions-right">
+          <button class="btn-affected" title="Endorse issue">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M7 10v12M15 10a4 4 0 0 0-4-4H8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7c1.5 0 2.87-.87 3.5-2.2l2.3-4.9a2 2 0 0 0 .2-.9V12a2 2 0 0 0-2-2h-4Z">
+              </path>
+            </svg>
+            Affected too <strong style="margin-left: 2px;">12</strong>
+          </button>
+          <a href="details.html" class="btn btn-outline btn-sm">
+            Details &gt;
+          </a>
+        </div>
+      </article>
+
+      <!-- Issue Card 2 (Critical & Overdue) -->
+      <article class="issue-card">
+        <div class="issue-icon-squircle squircle-red">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </div>
+
+        <div class="issue-main-content">
+          <div class="issue-badge-row">
+            <span class="badge badge-red">Plumbing & Sanitation</span>
+            <span class="badge badge-neutral">• TKT-8831</span>
+            <span class="badge badge-red">
+              <span class="badge-dot"></span> Overdue • Escalated to Facility Head
+            </span>
+            <span class="badge badge-red-solid">Escalated: Missed 12h SLA</span>
+          </div>
+
+          <h3 class="issue-title">Water Tap Leaking Continuously in Washroom</h3>
+
+          <div class="issue-meta-row">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Academic Wing 3, 1st Floor Washroom 102
+            </span>
+            <span class="meta-item meta-alert">
+              ! Open for: 16h (Overdue by 4h)
+            </span>
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              High water wastage risk
+            </span>
+          </div>
+
+          <div class="issue-assignee-row">
+            <span>Assigned to:</span>
+            <span class="badge badge-neutral" style="padding: 0.15rem 0.5rem;">
+              <span class="assignee-avatar avatar-blue">AV</span>
+              Amit Verma (Senior Plumber)
+            </span>
+            <span style="color: #64748b;">• Escalated to Dr. S. Rao (Facility GM)</span>
+          </div>
+        </div>
+
+        <div class="issue-actions-right">
+          <button class="btn-affected btn-affected-red" title="Report affected">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8a6 6 0 0 0-9.33-5M12 2v4m0 16v-4m9.33-5A6 6 0 0 0 18 8"></path>
+            </svg>
+            Affected too <strong style="margin-left: 2px;">28</strong>
+          </button>
+          <a href="details.html" class="btn btn-outline btn-sm">
+            Details &gt;
+          </a>
+        </div>
+      </article>
+
+      <!-- Issue Card 3 -->
+      <article class="issue-card">
+        <div class="issue-icon-squircle squircle-indigo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="6" width="16" height="10" rx="2"></rect>
+            <path d="M4 16v4M20 16v4M8 12h8"></path>
+          </svg>
+        </div>
+
+        <div class="issue-main-content">
+          <div class="issue-badge-row">
+            <span class="badge badge-neutral">Carpentry & Furniture</span>
+            <span class="badge badge-neutral">• TKT-8819</span>
+            <span class="badge badge-neutral">
+              <span class="badge-dot"></span> Assigned • Awaiting Replacement Base
+            </span>
+          </div>
+
+          <h3 class="issue-title">Broken Desk & Unstable Chair Base</h3>
+
+          <div class="issue-meta-row">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Central Library, 3rd Floor Quiet Study Pod #12
+            </span>
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              Open for: <strong>8h</strong>
+            </span>
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              Target fix: <strong>Today, 5:00 PM</strong>
+            </span>
+          </div>
+
+          <div class="issue-assignee-row">
+            <span>Assigned to:</span>
+            <span class="badge badge-neutral" style="padding: 0.15rem 0.5rem;">
+              <span class="assignee-avatar avatar-blue">SS</span>
+              Sunil Sharma (Carpentry Lead)
+            </span>
+            <span style="color: #64748b;">• Hardware requisition approved</span>
+          </div>
+        </div>
+
+        <div class="issue-actions-right">
+          <button class="btn-affected" title="Endorse issue">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M7 10v12M15 10a4 4 0 0 0-4-4H8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7c1.5 0 2.87-.87 3.5-2.2l2.3-4.9a2 2 0 0 0 .2-.9V12a2 2 0 0 0-2-2h-4Z">
+              </path>
+            </svg>
+            Affected too <strong style="margin-left: 2px;">5</strong>
+          </button>
+          <a href="details.html" class="btn btn-outline btn-sm">
+            Details &gt;
+          </a>
+        </div>
+      </article>
+
+      <!-- Issue Card 4 (Resolved) -->
+      <article class="issue-card">
+        <div class="issue-icon-squircle squircle-green">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+
+        <div class="issue-main-content">
+          <div class="issue-badge-row">
+            <span class="badge badge-green">Sanitation & Drainage</span>
+            <span class="badge badge-neutral">• TKT-8804</span>
+            <span class="badge badge-dark-teal">
+              <span class="badge-dot" style="background-color: #34d399;"></span> Resolved • Awaiting Reporter
+              Verification
+            </span>
+          </div>
+
+          <h3 class="issue-title">Drain Blockage & Water Stagnation in Pantry Sink</h3>
+
+          <div class="issue-meta-row">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Tech Park Tower 1, 4th Floor Common Cafeteria
+            </span>
+            <span class="meta-item meta-success">
+              ✔ Fixed in: 1h 45m (Total open: 2h)
+            </span>
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+              </svg>
+              Resolution photo attached
+            </span>
+          </div>
+
+          <div class="issue-assignee-row">
+            <span>Fixed by:</span>
+            <span class="badge badge-neutral" style="padding: 0.15rem 0.5rem;">
+              <span class="assignee-avatar avatar-teal">RS</span>
+              Ravi Singh (Sanitation Crew)
+            </span>
+            <span style="color: #059669; font-weight: 500;">• Reporter sign-off pending</span>
+          </div>
+        </div>
+
+        <div class="issue-actions-right">
+          <a href="verification.html" class="btn btn-success btn-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Confirm Resolution
+          </a>
+          <a href="verification.html" class="btn btn-outline btn-sm">
+            Audit Trail &gt;
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Bottom Transparency Bar -->
+    <div class="bottom-audit-bar">
+      <div class="audit-left">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          <path d="m9 12 2 2 4-4"></path>
+        </svg>
+        <span><strong>Decentralized Facility Audit Active:</strong> Every repair is timestamped, GPS-verified, and
+          signed off by student/resident representatives.</span>
+      </div>
+      <div class="audit-right">
+        <span>● Auto-Sync: 30s</span>
+        <span>⏱ SLA Accuracy: 94.6%</span>
       </div>
     </div>
 
@@ -2949,7 +3287,7 @@ img {
 
   <!-- Mobile Bottom Navigation Bar (Visible only on mobile devices) -->
   <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
-    <a href="index.html" class="mobile-nav-item ">
+    <a href="index.html" class="mobile-nav-item active">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
         <polyline points="9 22 9 12 15 12 15 22"></polyline>
